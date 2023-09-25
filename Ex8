@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jogo de Dados</title>
+</head>
+<body>
+    <h1>Jogo de Dados</h1>
+    
+    <?php
+    // Gere um número aleatório entre 1 e 6
+    $sorteio = random_int(1, 6);
+
+    // Use a estrutura switch-case para determinar qual imagem mostrar com base no resultado do sorteio
+    switch ($sorteio) {
+        case 1:
+            $imagem = 'dado-1.png';
+            break;
+        case 2:
+            $imagem = 'dado-2.png';
+            break;
+        case 3:
+            $imagem = 'dado-3.png';
+            break;
+        case 4:
+            $imagem = 'dado-4.png';
+            break;
+        case 5:
+            $imagem = 'dado-5.png';
+            break;
+        case 6:
+            $imagem = 'dado-6.png';
+            break;
+        default:
+            $imagem = 'dado-unknown.png';
+            break;
+    }
+    ?>
+
+    <img src="<?php echo $imagem; ?>" alt="Dado">
+</body>
+</html>
