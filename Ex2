@@ -1,0 +1,43 @@
+<?php
+// Inicialize os contadores
+$positivos = 0;
+$negativos = 0;
+$pares = 0;
+$impares = 0;
+
+// Vetor para armazenar os números digitados
+$numeros = array();
+
+// Solicite ao usuário que insira 10 números
+for ($i = 1; $i <= 10; $i++) {
+    $numero = intval(readline("Digite o {$i}º número: "));
+    $numeros[] = $numero;
+
+    // Verificar se o número é positivo ou negativo
+    if ($numero > 0) {
+        $positivos++;
+    } elseif ($numero < 0) {
+        $negativos++;
+    }
+
+    // Verificar se o número é par ou ímpar
+    if ($numero % 2 == 0) {
+        $pares++;
+    } else {
+        $impares++;
+    }
+}
+
+// Mostrar os resultados
+echo "Resultados:\n";
+echo "Quantidade de números positivos: {$positivos}\n";
+echo "Quantidade de números negativos: {$negativos}\n";
+echo "Quantidade de números pares: {$pares}\n";
+echo "Quantidade de números ímpares: {$impares}\n";
+?>
+Este código solicitará ao usuário que insira 10 números e, em seguida, contará a quantidade de números positivos, negativos, pares e ímpares no vetor e mostrará os resultados.
+
+
+
+
+
