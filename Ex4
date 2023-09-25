@@ -1,0 +1,48 @@
+<?php
+// Inicialize vetores para armazenar informações das pessoas
+$nomes = array();
+$cidades = array();
+$idades = array();
+$sexos = array();
+
+// Solicite ao usuário que cadastre 10 pessoas
+for ($i = 1; $i <= 10; $i++) {
+    echo "Cadastro da pessoa {$i}:\n";
+    $nome = readline("Nome: ");
+    $cidade = readline("Cidade: ");
+    $idade = intval(readline("Idade: "));
+    $sexo = readline("Sexo (M/F): ");
+
+    // Armazene as informações nos vetores
+    $nomes[] = $nome;
+    $cidades[] = $cidade;
+    $idades[] = $idade;
+    $sexos[] = $sexo;
+}
+
+// 1. Listagem de todos os nomes e idades das pessoas cadastradas
+echo "Listagem de nomes e idades:\n";
+for ($i = 0; $i < 10; $i++) {
+    echo "Nome: {$nomes[$i]}, Idade: {$idades[$i]}\n";
+}
+
+// 2. Listagem de todos os nomes de quem mora em Santos
+echo "Nomes de pessoas que moram em Santos:\n";
+for ($i = 0; $i < 10; $i++) {
+    if (strtolower($cidades[$i]) === 'santos') {
+        echo "{$nomes[$i]}\n";
+    }
+}
+
+// 3. Listagem de todos os nomes de quem tem mais de 18 anos
+echo "Nomes de pessoas com mais de 18 anos:\n";
+for ($i = 0; $i < 10; $i++) {
+    if ($idades[$i] > 18) {
+        echo "{$nomes[$i]}\n";
+    }
+}
+
+// 4. Contagem de pessoas do sexo masculino
+$masculinoCount = array_count_values($sexos)['M'];
+echo "Número de pessoas do sexo masculino: {$masculinoCount}\n";
+?>
