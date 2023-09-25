@@ -1,0 +1,18 @@
+<?php
+// Inicialize o vetor com 15 números inteiros
+$numeros = array(2, 5, 8, 12, 7, 20, 15, 30, 10, 25, 14, 3, 18, 6, 9);
+
+// Função para verificar se um número é par ou ímpar e imprimir a mensagem correspondente
+function verificarParOuImpar($numero) {
+    if ($numero % 2 == 0) {
+        echo $numero . " é par.<br>";
+    } else {
+        echo $numero . " é ímpar.<br>";
+    }
+}
+
+// Iterar pelo vetor e chamar a função para cada número
+foreach ($numeros as $numero) {
+    verificarParOuImpar($numero);
+}
+?>
