@@ -1,0 +1,16 @@
+<?php
+// Vetor para armazenar os valores
+$valores = array();
+
+// Solicitar ao usuário que insira 10 valores
+for ($i = 1; $i <= 10; $i++) {
+    $valor = readline("Digite o {$i}º valor: ");
+    $valores[] = $valor;
+}
+
+// Escrever os valores na ordem contrária
+echo "Valores na ordem contrária:\n";
+for ($i = 9; $i >= 0; $i--) {
+    echo $valores[$i] . "\n";
+}
+?>
