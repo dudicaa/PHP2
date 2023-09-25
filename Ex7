@@ -1,0 +1,23 @@
+<?php
+function combustivelMaisVantajoso($precoGasolina, $precoEtanol) {
+    // Calcula o preço do etanol em relação à gasolina
+    $relacaoPreco = $precoEtanol / $precoGasolina;
+
+    // Define a porcentagem de consumo a mais com etanol
+    $porcentagemConsumoAMais = 0.30; // 30%
+
+    // Verifica se o etanol é mais vantajoso com base na diferença de preços
+    if ($relacaoPreco <= (1 + $porcentagemConsumoAMais)) {
+        return "Abasteça com etanol.";
+    } else {
+        return "Abasteça com gasolina.";
+    }
+}
+
+// Preços médios dos combustíveis (exemplo)
+$precoGasolina = 5.00; // Preço do litro da gasolina
+$precoEtanol = 3.50;   // Preço do litro do etanol
+
+$resultado = combustivelMaisVantajoso($precoGasolina, $precoEtanol);
+echo "Recomendação: {$resultado}\n";
+?>
