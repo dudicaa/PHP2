@@ -1,0 +1,32 @@
+<?php
+function isPrimo($numero) {
+    if ($numero <= 1) {
+        return false;
+    }
+
+    // Verifique se o número é divisível por algum número de 2 até a raiz quadrada do número
+    for ($i = 2; $i <= sqrt($numero); $i++) {
+        if ($numero % $i == 0) {
+            return false; // O número não é primo
+        }
+    }
+
+    return true; // O número é primo
+}
+
+// Teste a função com alguns números
+$numero1 = 7;
+$numero2 = 10;
+
+if (isPrimo($numero1)) {
+    echo "{$numero1} é primo.\n";
+} else {
+    echo "{$numero1} não é primo.\n";
+}
+
+if (isPrimo($numero2)) {
+    echo "{$numero2} é primo.\n";
+} else {
+    echo "{$numero2} não é primo.\n";
+}
+?>
