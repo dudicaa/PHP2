@@ -1,0 +1,47 @@
+<?php
+// Função para retornar o nome do mês por extenso
+function nomeDoMes($mes) {
+    $meses = array(
+        1 => 'janeiro',
+        2 => 'fevereiro',
+        3 => 'março',
+        4 => 'abril',
+        5 => 'maio',
+        6 => 'junho',
+        7 => 'julho',
+        8 => 'agosto',
+        9 => 'setembro',
+        10 => 'outubro',
+        11 => 'novembro',
+        12 => 'dezembro'
+    );
+
+    return $meses[$mes];
+}
+
+// Função para escrever a data por extenso
+function dataPorExtenso($data) {
+    list($dia, $mes, $ano) = explode('/', $data);
+
+    $mesExtenso = nomeDoMes(intval($mes));
+
+    return "{$dia} de {$mesExtenso} de {$ano}";
+}
+
+// Entrada da data
+$data = readline("Digite uma data (dd/mm/aaaa): ");
+
+// Verificar se a data está no formato correto
+if (preg_match('/^(\d{2})\/(\d{2})\/(\d{4})$/', $data, $matches)) {
+    $dataPorExtenso = dataPorExtenso($data);
+    echo "Data por extenso: {$dataPorExtenso}\n";
+} else {
+    echo "Formato de data inválido. Use dd/mm/aaaa.\n";
+}
+?>
+Neste código, a função nomeDoMes() retorna o nome do mês por extenso com base no número do mês e a função dataPorExtenso() recebe a data no formato "dd/mm/aaaa", divide-a em dia, mês e ano e, em seguida, monta a data por extenso usando o nome do mês retornado pela função nomeDoMes(). Certifique-se de que a entrada da data esteja no formato correto "dd/mm/aaaa" para que o script funcione corretamente.
+
+
+
+
+
