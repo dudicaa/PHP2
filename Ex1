@@ -1,18 +1,53 @@
-<?php
-// Inicialize o vetor com 15 números inteiros
-$numeros = array(2, 5, 8, 12, 7, 20, 15, 30, 10, 25, 14, 3, 18, 6, 9);
+<!DOCTYPE html>
+<html lang="pt-br">
 
-// Função para verificar se um número é par ou ímpar e imprimir a mensagem correspondente
-function verificarParOuImpar($numero) {
-    if ($numero % 2 == 0) {
-        echo $numero . " é par.<br>";
-    } else {
-        echo $numero . " é ímpar.<br>";
-    }
-}
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 1</title>
+    <link rel="stylesheet" href="bitnami.css">
+</head>
 
-// Iterar pelo vetor e chamar a função para cada número
-foreach ($numeros as $numero) {
-    verificarParOuImpar($numero);
-}
-?>
+<body>
+    <div class="links">
+        <a href="ex1.php">Exercício 1</a>
+        <a href="ex2.php">Exercício 2</a>
+        <a href="ex3.php">Exercício 3</a>
+        <a href="ex4.php">Exercício 4</a>
+        <a href="ex5.php">Exercício 5</a>
+        <a href="ex6.php">Exercício 6</a>
+        <a href="ex7.php">Exercício 7</a>
+        <a href="ex8.php">Exercício 8</a>
+        <a href="ex9.php">Exercício 9</a>
+        <a href="ex10.php">Exercício 10</a>
+        <a href="ex11.php">Exercício 11</a>
+    </div>
+    <div class="form">
+    <h2>Insira 15 números inteiros</h2>
+    <form method="post" action="">
+    <label>Números:</label>
+    <input type="submit" value="Verificar" name='número'>
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $numeros = array();
+            for ($i = 1; $i <= 15; $i++) {
+                $input_name = "numero" . $i;
+                $numero = $_POST[$input_name];
+                array_push($numeros, $numero);
+            }
+            for ($i = 0; $i < 15; $i++) {
+                $numero = $numeros[$i];
+                $mensagem = ($numero % 2 == 0) ? "par" : "ímpar";
+                echo "O número $numero é $mensagem.<br>";
+            }
+            for ($i = 1; $i <= 15; $i++) {
+                $input_name = "numero" . $i;
+                echo "<input type='number' name='$input_name' required><br>";
+            }
+        }
+        ?>
+        
+     <br>
+    </div>
+    </form>
+</body>
+</html>
